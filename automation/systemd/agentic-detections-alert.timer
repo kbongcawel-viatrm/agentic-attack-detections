@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily agentic-attack-detections retrohunt -> OpenObserve alert stream
+
+[Timer]
+# 05:15 UTC — after eve-logs-pack.timer (04:30 UTC) and before the GitHub
+# workflow (05:23 UTC). Persistent catches up after downtime.
+OnCalendar=*-*-* 05:15:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

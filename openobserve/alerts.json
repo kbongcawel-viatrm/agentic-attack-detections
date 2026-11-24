@@ -1,0 +1,107 @@
+[
+  {
+    "alert_id": "3MV4QqkLp8tYPgX6r51s3dubBwH",
+    "folder_id": "default",
+    "folder_name": "default",
+    "name": "agentic-detections-daily-hits",
+    "owner": "root@example.com",
+    "description": "Fires when the daily agentic-attack-detections retrohunt ingests >=1 rule hit from Suricata EVE exports (host timer agentic-detections-alert.timer, ~05:15 UTC).",
+    "alert_type": "scheduled",
+    "stream_name": "agentic_detections",
+    "stream_type": "logs",
+    "condition": {
+      "type": "sql",
+      "conditions": null,
+      "sql": "SELECT count(*) AS hits FROM \"agentic_detections\"",
+      "promql": null,
+      "promql_condition": null,
+      "aggregation": null,
+      "vrl_function": null,
+      "search_event_type": null,
+      "multi_time_range": []
+    },
+    "trigger_condition": {
+      "period": 60,
+      "operator": ">",
+      "threshold": 0,
+      "frequency": 0,
+      "cron": "0 45 5 * * *",
+      "frequency_type": "cron",
+      "silence": 10080,
+      "timezone": "UTC",
+      "tolerance_in_secs": null,
+      "align_time": true
+    },
+    "enabled": true,
+    "last_triggered_at": 1795499123429271,
+    "last_satisfied_at": null,
+    "is_real_time": false,
+    "last_outcome": "error",
+    "last_outcome_at": 1795499123435563,
+    "last_outcome_since": 1795499103434261,
+    "priority": 1,
+    "tags": [
+      "threatdefense",
+      "agentic-detections"
+    ],
+    "referenced_by_composite_count": 0
+  },
+  {
+    "alert_id": "3MV3QM5R9fXT3qCMiVesP7SNPmI",
+    "folder_id": "default",
+    "folder_name": "default",
+    "name": "realtime_suricata_reports",
+    "owner": "dummykevin08@gmail.com",
+    "description": "This is an alert triggered by threatdefense",
+    "alert_type": "realtime",
+    "stream_name": "suricata_reports",
+    "stream_type": "logs",
+    "condition": {
+      "type": "custom",
+      "conditions": {
+        "version": 2,
+        "conditions": {
+          "filterType": "group",
+          "logicalOperator": "AND",
+          "conditions": [
+            {
+              "filterType": "condition",
+              "column": "verdict",
+              "operator": "=",
+              "value": "ANOMALOUS",
+              "logicalOperator": "AND"
+            }
+          ]
+        }
+      },
+      "sql": null,
+      "promql": null,
+      "promql_condition": null,
+      "aggregation": null,
+      "vrl_function": null,
+      "search_event_type": null,
+      "multi_time_range": []
+    },
+    "trigger_condition": {
+      "period": 10,
+      "operator": ">=",
+      "threshold": 3,
+      "frequency": 10,
+      "cron": "",
+      "frequency_type": "minutes",
+      "silence": 10,
+      "timezone": "UTC",
+      "tolerance_in_secs": null,
+      "align_time": true
+    },
+    "enabled": true,
+    "last_triggered_at": 1795551023428735,
+    "last_satisfied_at": 1795550415311207,
+    "is_real_time": true,
+    "priority": 1,
+    "tags": [
+      "threatdefense",
+      "home-security"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[Unit]
+Description=Pack Suricata EVE logs and push eve-logs branch for GitHub scan
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/var/home/kim/workspace/suricata-containerized-rootful/agentic-attack-detections/devin/pack-logs.sh
+TimeoutStartSec=600

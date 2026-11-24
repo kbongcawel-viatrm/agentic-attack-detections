@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync ThreatDefence agentic-attack-detections Suricata rules and restart engines
+Wants=network-online.target
+After=network-online.target suricata.service suricata-ids.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/sync-agentic-rules.sh
+TimeoutStartSec=600

@@ -1,0 +1,9 @@
+[Unit]
+Description=Suricata daily (24h) traffic assessment -> Markdown report + OpenObserve record
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/var/home/kim/workspace/v2.home-security.uk/observability/.env
+ExecStart=/home/kim/.agents/skills/suricata-trend-report/ollama/daily_assess.sh --hours 24 --o2-report --email
+TimeoutStartSec=600

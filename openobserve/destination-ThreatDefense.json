@@ -1,0 +1,12 @@
+{
+  "name": "ThreatDefense",
+  "url": "",
+  "method": "post",
+  "skip_tls_verify": false,
+  "template": "threatdefense",
+  "emails": [
+    "dummykevin08@gmail.com"
+  ],
+  "type": "email",
+  "metadata": {}
+}

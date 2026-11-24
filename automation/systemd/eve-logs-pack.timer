@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily Suricata EVE log pack for agentic-detections GitHub workflow
+
+[Timer]
+OnCalendar=*-*-* 04:30:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

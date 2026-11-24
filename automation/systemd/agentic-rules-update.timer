@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily agentic-attack-detections Suricata rule sync
+
+[Timer]
+# 04:30 daily, after the ET rules update (03:30 + up to 15m random delay)
+OnCalendar=*-*-* 04:30:00
+RandomizedDelaySec=10m
+Persistent=true
+
+[Install]
+WantedBy=timers.target
